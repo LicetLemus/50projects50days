@@ -1,0 +1,71 @@
+/* import of fonts 'Muli' of google font*/
+@import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
+
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Muli', sans-serif;
+  /*Causes the padding and border to be included in the total width and height of the elements*/
+  box-sizing: border-box;
+}
+
+.cards {
+  display: flex;
+  column-gap: 20px;
+  margin: 70px;
+  /*The elements are arranged in a row and wrap if they exceed the container width*/
+  flex-wrap: nowrap;
+  min-height: 100vh;
+}
+
+.cards__images {
+  width: 70px;
+  /*the image is rendered preserving its own proportion*/
+  background-size: cover;
+  /*The image is centered in the container*/
+  background-position: center;
+  /*The transition property is used to create a smooth effect when changing the flex property*/
+  /*1 second duration, ease-in-out timing function*/
+  transition: flex 1s ease-in-out;
+  /*The position property specifies the type of positioning method used for an element*/
+  position: relative;
+  /*The cursor property specifies the type of cursor to be displayed when pointing on an element*/
+  cursor: pointer;
+  /*The height of the container*/
+  height: 550px;
+  /*The border-radius property defines the radius of the element's corners*/
+  border-radius: 50px;
+  /*The overflow property specifies what happens if content overflows an element's box
+  hidden - The overflow is clipped, and the rest of the content will be invisible
+  */
+  overflow: hidden; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* 
+The active class is added to the clicked card 
+*/
+.cards__images.active {
+  /* five times larger than the rest of the elements when the element is active */
+  flex: 5;
+}
+
+.cards__text {
+  display: none;
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  font-size: 1.5em;
+  color: white;
+  margin: 0;
+  padding: 0;
+}
+
+
+/* display:block is added to the text when the card is active */
+.cards__images.active .cards__text { 
+  display: block; 
+}
